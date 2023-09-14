@@ -13,7 +13,7 @@ const App = () => {
     const [editar, setEditar] = useState(null);
 
     const mostrarEmpleados = async () => {
-        const response = await fetch("https://apipdnexamen.azurewebsites.net/obtieneEmpleados/0");
+        const response = await fetch("https://backendapipdn.azurewebsites.net/obtieneEmpleados/0");
         //debugger;
         if (response.ok) {
             const data = await response.json();
@@ -28,7 +28,7 @@ const App = () => {
     }
 
     const obtenerareas = async () => {
-        const response = await fetch("https://apipdnexamen.azurewebsites.net/obtenAreas");
+        const response = await fetch("https://backendapipdn.azurewebsites.net/obtenAreas");
         //debugger;
         if (response.ok) {
             const areas = await response.json();
@@ -45,7 +45,7 @@ const App = () => {
     const guardarEmpleado = async (empleado) => {
         debugger;
 
-        const response = await fetch("https://apipdnexamen.azurewebsites.net/ingModEmpleado", {
+        const response = await fetch("https://backendapipdn.azurewebsites.net/ingModEmpleado", {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

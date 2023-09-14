@@ -38,7 +38,7 @@ namespace PDNWPF.Presentacion
                 HttpHelp hp = new HttpHelp();
                 string resp = "";
                 List<ExaTEmpleado> lst = new List<ExaTEmpleado>();
-                resp = await hp.obtenEmpleados(string.Format("https://apipdnexamen.azurewebsites.net/obtieneEmpleados/{0}", id));
+                resp = await hp.obtenEmpleados(string.Format("https://backendapipdn.azurewebsites.net/obtieneEmpleados/{0}", id));
                 lst = JsonConvert.DeserializeObject<List<ExaTEmpleado>>(resp);
                 ExaTEmpleado el = lst.FirstOrDefault();
 
@@ -90,11 +90,11 @@ namespace PDNWPF.Presentacion
                 HttpHelp hp = new HttpHelp();
                 string resp = "";
                 List<ExaTEmpleado> lst = new List<ExaTEmpleado>();
-                resp = await hp.obtenEmpleados(string.Format("https://apipdnexamen.azurewebsites.net/obtieneEmpleados/{0}", id));
+                resp = await hp.obtenEmpleados(string.Format("https://backendapipdn.azurewebsites.net/obtieneEmpleados/{0}", id));
                 lst = JsonConvert.DeserializeObject<List<ExaTEmpleado>>(resp);
                 ExaTEmpleado el = lst.FirstOrDefault();
                 el.Estatus = est;
-                string res = await hp.enviaEmpleado("https://apipdnexamen.azurewebsites.net/ingModEmpleado", el);
+                string res = await hp.enviaEmpleado("https://backendapipdn.azurewebsites.net/ingModEmpleado", el);
                 return res;
 
             }
@@ -121,7 +121,7 @@ namespace PDNWPF.Presentacion
                 emp.Amaterno = txtAm.Text;
                 emp.Estatus = est;
                 HttpHelp hp = new HttpHelp();
-                string res = await hp.enviaEmpleado("https://apipdnexamen.azurewebsites.net/ingModEmpleado", emp);
+                string res = await hp.enviaEmpleado("https://backendapipdn.azurewebsites.net/ingModEmpleado", emp);
                 return res;
 
             }
@@ -182,7 +182,7 @@ namespace PDNWPF.Presentacion
             HttpHelp hp = new HttpHelp();
             string resp = "";
             List<ExaCArea> lst = new List<ExaCArea>();
-            resp = await hp.obtenEmpleados("https://apipdnexamen.azurewebsites.net/obtenAreas");
+            resp = await hp.obtenEmpleados("https://backendapipdn.azurewebsites.net/obtenAreas");
             lst = JsonConvert.DeserializeObject<List<ExaCArea>>(resp);
             dropArea.DataSource = lst;
             dropArea.DisplayMember = "Area";

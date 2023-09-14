@@ -33,7 +33,7 @@ namespace PDNWPF
             string resp = "";
 
             List<ExaTEmpleado2> lst = new List<ExaTEmpleado2>();
-            resp = await hp.obtenEmpleados("https://apipdnexamen.azurewebsites.net/obtieneEmpleados/0");
+            resp = await hp.obtenEmpleados("https://backendapipdn.azurewebsites.net/obtieneEmpleados/0");
 
             lst = JsonConvert.DeserializeObject<List<ExaTEmpleado2>>(resp);
             dataGridView1.DataSource = lst;
@@ -97,6 +97,11 @@ namespace PDNWPF
                 string res = await frmAg.eliminaEmpleado(false);
                 MessageBox.Show(res);
             }
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

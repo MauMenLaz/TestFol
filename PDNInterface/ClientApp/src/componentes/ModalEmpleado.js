@@ -88,15 +88,15 @@ const ModalEmpleado = ({ mostrarModal, setMostrarModal, guardarEmpleado, editar,
                         <Label for="nombre">
                             Nombre
                         </Label>
-                        <Input name="nombre" id="nombre" onChange={(e) => actualizarDato(e)} value={empleado.nombre} />
+                        <Input name="nombre" id="nombre" maxLength={50} onChange={(e) => actualizarDato(e)} value={empleado.nombre} />
                         <Label for="apaterno">
                             Apellido paterno
                         </Label>
-                        <Input name="apaterno" id="apaterno" onChange={(e) => actualizarDato(e)} value={empleado.apaterno} />
+                        <Input name="apaterno" id="apaterno" maxLength={50}  onChange={(e) => actualizarDato(e)} value={empleado.apaterno} />
                         <Label for="amaterno">
                             Apellido Materno
                         </Label>
-                        <Input name="amaterno" id="amaterno" onChange={(e) => actualizarDato(e)} value={empleado.amaterno} />
+                        <Input name="amaterno" id="amaterno" maxLength={50} onChange={(e) => actualizarDato(e)} value={empleado.amaterno} />
                         <Label for="area">
                             Area
                         </Label>
@@ -114,10 +114,10 @@ const ModalEmpleado = ({ mostrarModal, setMostrarModal, guardarEmpleado, editar,
                         </Label>
 
                         <Input class="form-control" type="date" id="fechaNac" name="fechaNacimiento" onChange={(e) => actualizarDato(e)} value={empleado.fechaNacimiento} />
-                        <Label for="sueldo">
+                        <Label  for="sueldo">
                             Sueldo
                         </Label>
-                        <Input name="sueldo" id="sueldo" onChange={(e) => actualizarDato(e)} value={empleado.sueldo} />
+                        <Input name="sueldo" type="number" id="sueldo" onChange={(e) => actualizarDato(e)} value={empleado.sueldo} />
                     </FormGroup>
                 </Form>
             </ModalBody>
